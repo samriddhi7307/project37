@@ -27,9 +27,9 @@ function setup() {
   dog1 = createSprite(800,220);
   dog1.addImage("Hungry",hungryDog);
   //dog1.addImage("happy",happydogimg);
-  dog1.addImage("Sleeping",bedroomimg);
+ /* dog1.addImage("Sleeping",bedroomimg);
   dog1.addImage("Playing",gardenimg);
-  dog1.addImage("Bathing",washroomimg);
+  dog1.addImage("Bathing",washroomimg);*/
   //dog1.addImage(sleepimg);
   //dog1.addImage(runimg);
   dog1.scale = 0.15
@@ -77,7 +77,7 @@ dog1.remove();
 else{
   feed.show();
   addFood.show();
-  dog.addImage(sadDog);
+  dog1.addImage(sadDog);
 }
 fill(255)
 textSize(20);
@@ -116,8 +116,8 @@ function addFoods(){
 
 }
 
-function update(){
+function update(state){
   database.ref('/').update({
-    gameState : 0
+    gameState : state
   });
 }
